@@ -1,0 +1,32 @@
+= vvosc-ios
+<em>The VVOSC library prepared for the iOS environment</em>
+============
+
+This project borrows from the vvopensource projected hosted here[https://code.google.com/p/vvopensource/]. The code was altered and put into a simpler project that allows for quickly building only the VVOSC component of the library (contains only the VVOSC component and its dependency, VVBasics).
+
+== GETTING STARTED
+=== If you just want to use VVOSC in your iPhone project
+1. Drag VVOSC/include and VVOSC/libVVOSC.a into your Xcode project
+2. Add the -ObjC and -all_load linker flags to your target. This is because of how iOS loads categories which are used in VVOSC. More info here[https://codinggeekorg.wordpress.com/2011/02/28/ios-static-libraries-and-objective-c-categories/]
+3. Use VVOSC!
+
+=== If you want to compile the library it yourself
+1. Open VVOSC.xcodeproj
+2. Select your scheme (Debug or Release)
+3. Build the library for iOS device and iOS simulator
+4. The libraries will be put into a subdirectory of ~/Library/Developer/Xcode/DerivedData
+5. Navigate to the Build/Products directory where you should see folders that look like {BUILD_SCHEME}-{TARGET} (e.g. Release-iphoneos)
+6. Use lipo -create to combine the device and simulator libraries into one
+    lipo -create Release-iphoneos/libVVOSC.a Release-iphonesimulator/libVVOSC.a -output libVVOSC.a
+7. Drag the header files and newly created libVVOSC.a into your project
+8. Use VVOSC!
+
+=== You want to use the source directly in your project
+1. Drag the contents of VVOSC/include and VVOSC/src into your project
+2. Use VVOSC!
+
+== ISSUES
+If anyone finds issues with the instructions, please feel free to open an issue and I'll take a look as soon as I can.
+
+== THANKS
+Huge kudos to the contributors of vvopensource who did all the hard work writing these awesome libraries. I hope this project will help others get VVOSC into their iOS apps a bit easier! :)

@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D09471F15B0AE2E002520A6 /* MutLockArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F015B0AE2E002520A6 /* MutLockArray.h */; };
+		4D09472015B0AE2E002520A6 /* MutLockDict.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F115B0AE2E002520A6 /* MutLockDict.h */; };
+		4D09472115B0AE2E002520A6 /* MutNRLockArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F215B0AE2E002520A6 /* MutNRLockArray.h */; };
+		4D09472215B0AE2E002520A6 /* MutNRLockDict.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F315B0AE2E002520A6 /* MutNRLockDict.h */; };
+		4D09472315B0AE2E002520A6 /* NamedMutLockArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F415B0AE2E002520A6 /* NamedMutLockArray.h */; };
+		4D09472415B0AE2E002520A6 /* ObjectHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F515B0AE2E002520A6 /* ObjectHolder.h */; };
+		4D09472515B0AE2E002520A6 /* OSCAddressSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F615B0AE2E002520A6 /* OSCAddressSpace.h */; };
+		4D09472615B0AE2E002520A6 /* OSCBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F715B0AE2E002520A6 /* OSCBundle.h */; };
+		4D09472715B0AE2E002520A6 /* OSCConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F815B0AE2E002520A6 /* OSCConstants.h */; };
+		4D09472815B0AE2E002520A6 /* OSCInPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946F915B0AE2E002520A6 /* OSCInPort.h */; };
+		4D09472915B0AE2E002520A6 /* OSCManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946FA15B0AE2E002520A6 /* OSCManager.h */; };
+		4D09472A15B0AE2E002520A6 /* OSCMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946FB15B0AE2E002520A6 /* OSCMessage.h */; };
+		4D09472B15B0AE2E002520A6 /* OSCNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946FC15B0AE2E002520A6 /* OSCNode.h */; };
+		4D09472C15B0AE2E002520A6 /* OSCOutPort.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946FD15B0AE2E002520A6 /* OSCOutPort.h */; };
+		4D09472D15B0AE2E002520A6 /* OSCPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946FE15B0AE2E002520A6 /* OSCPacket.h */; };
+		4D09472E15B0AE2E002520A6 /* OSCStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D0946FF15B0AE2E002520A6 /* OSCStringAdditions.h */; };
+		4D09472F15B0AE2E002520A6 /* OSCValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470015B0AE2E002520A6 /* OSCValue.h */; };
+		4D09473015B0AE2E002520A6 /* OSCZeroConfDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470115B0AE2E002520A6 /* OSCZeroConfDomain.h */; };
+		4D09473115B0AE2E002520A6 /* OSCZeroConfManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470215B0AE2E002520A6 /* OSCZeroConfManager.h */; };
+		4D09473215B0AE2E002520A6 /* VVAssertionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470315B0AE2E002520A6 /* VVAssertionHandler.h */; };
+		4D09473315B0AE2E002520A6 /* VVBasicMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470415B0AE2E002520A6 /* VVBasicMacros.h */; };
+		4D09473415B0AE2E002520A6 /* VVBasics.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470515B0AE2E002520A6 /* VVBasics.h */; };
+		4D09473515B0AE2E002520A6 /* VVOSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470615B0AE2E002520A6 /* VVOSC.h */; };
+		4D09473615B0AE2E002520A6 /* VVStopwatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470715B0AE2E002520A6 /* VVStopwatch.h */; };
+		4D09473715B0AE2E002520A6 /* VVThreadLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D09470815B0AE2E002520A6 /* VVThreadLoop.h */; };
+		4D09473815B0AE2E002520A6 /* MutLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09470A15B0AE2E002520A6 /* MutLockArray.m */; };
+		4D09473915B0AE2E002520A6 /* MutLockDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09470B15B0AE2E002520A6 /* MutLockDict.m */; };
+		4D09473A15B0AE2E002520A6 /* MutNRLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09470C15B0AE2E002520A6 /* MutNRLockArray.m */; };
+		4D09473B15B0AE2E002520A6 /* MutNRLockDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09470D15B0AE2E002520A6 /* MutNRLockDict.m */; };
+		4D09473C15B0AE2E002520A6 /* NamedMutLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09470E15B0AE2E002520A6 /* NamedMutLockArray.m */; };
+		4D09473D15B0AE2E002520A6 /* ObjectHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09470F15B0AE2E002520A6 /* ObjectHolder.m */; };
+		4D09473E15B0AE2E002520A6 /* OSCAddressSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471015B0AE2E002520A6 /* OSCAddressSpace.m */; };
+		4D09473F15B0AE2E002520A6 /* OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471115B0AE2E002520A6 /* OSCBundle.m */; };
+		4D09474015B0AE2E002520A6 /* OSCInPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471215B0AE2E002520A6 /* OSCInPort.m */; };
+		4D09474115B0AE2E002520A6 /* OSCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471315B0AE2E002520A6 /* OSCManager.m */; };
+		4D09474215B0AE2E002520A6 /* OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471415B0AE2E002520A6 /* OSCMessage.m */; };
+		4D09474315B0AE2E002520A6 /* OSCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471515B0AE2E002520A6 /* OSCNode.m */; };
+		4D09474415B0AE2E002520A6 /* OSCOutPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471615B0AE2E002520A6 /* OSCOutPort.m */; };
+		4D09474515B0AE2E002520A6 /* OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471715B0AE2E002520A6 /* OSCPacket.m */; };
+		4D09474615B0AE2E002520A6 /* OSCStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471815B0AE2E002520A6 /* OSCStringAdditions.m */; };
+		4D09474715B0AE2E002520A6 /* OSCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471915B0AE2E002520A6 /* OSCValue.m */; };
+		4D09474815B0AE2E002520A6 /* OSCZeroConfDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471A15B0AE2E002520A6 /* OSCZeroConfDomain.m */; };
+		4D09474915B0AE2E002520A6 /* OSCZeroConfManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471B15B0AE2E002520A6 /* OSCZeroConfManager.m */; };
+		4D09474A15B0AE2E002520A6 /* VVAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471C15B0AE2E002520A6 /* VVAssertionHandler.m */; };
+		4D09474B15B0AE2E002520A6 /* VVStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471D15B0AE2E002520A6 /* VVStopwatch.m */; };
+		4D09474C15B0AE2E002520A6 /* VVThreadLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D09471E15B0AE2E002520A6 /* VVThreadLoop.m */; };
+		4D56702415B0AC8400A70306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D56702315B0AC8400A70306 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4D0946F015B0AE2E002520A6 /* MutLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutLockArray.h; sourceTree = "<group>"; };
+		4D0946F115B0AE2E002520A6 /* MutLockDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutLockDict.h; sourceTree = "<group>"; };
+		4D0946F215B0AE2E002520A6 /* MutNRLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutNRLockArray.h; sourceTree = "<group>"; };
+		4D0946F315B0AE2E002520A6 /* MutNRLockDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutNRLockDict.h; sourceTree = "<group>"; };
+		4D0946F415B0AE2E002520A6 /* NamedMutLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NamedMutLockArray.h; sourceTree = "<group>"; };
+		4D0946F515B0AE2E002520A6 /* ObjectHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectHolder.h; sourceTree = "<group>"; };
+		4D0946F615B0AE2E002520A6 /* OSCAddressSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCAddressSpace.h; sourceTree = "<group>"; };
+		4D0946F715B0AE2E002520A6 /* OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCBundle.h; sourceTree = "<group>"; };
+		4D0946F815B0AE2E002520A6 /* OSCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConstants.h; sourceTree = "<group>"; };
+		4D0946F915B0AE2E002520A6 /* OSCInPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCInPort.h; sourceTree = "<group>"; };
+		4D0946FA15B0AE2E002520A6 /* OSCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCManager.h; sourceTree = "<group>"; };
+		4D0946FB15B0AE2E002520A6 /* OSCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCMessage.h; sourceTree = "<group>"; };
+		4D0946FC15B0AE2E002520A6 /* OSCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCNode.h; sourceTree = "<group>"; };
+		4D0946FD15B0AE2E002520A6 /* OSCOutPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCOutPort.h; sourceTree = "<group>"; };
+		4D0946FE15B0AE2E002520A6 /* OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCPacket.h; sourceTree = "<group>"; };
+		4D0946FF15B0AE2E002520A6 /* OSCStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCStringAdditions.h; sourceTree = "<group>"; };
+		4D09470015B0AE2E002520A6 /* OSCValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCValue.h; sourceTree = "<group>"; };
+		4D09470115B0AE2E002520A6 /* OSCZeroConfDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCZeroConfDomain.h; sourceTree = "<group>"; };
+		4D09470215B0AE2E002520A6 /* OSCZeroConfManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCZeroConfManager.h; sourceTree = "<group>"; };
+		4D09470315B0AE2E002520A6 /* VVAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVAssertionHandler.h; sourceTree = "<group>"; };
+		4D09470415B0AE2E002520A6 /* VVBasicMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasicMacros.h; sourceTree = "<group>"; };
+		4D09470515B0AE2E002520A6 /* VVBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasics.h; sourceTree = "<group>"; };
+		4D09470615B0AE2E002520A6 /* VVOSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVOSC.h; sourceTree = "<group>"; };
+		4D09470715B0AE2E002520A6 /* VVStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVStopwatch.h; sourceTree = "<group>"; };
+		4D09470815B0AE2E002520A6 /* VVThreadLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVThreadLoop.h; sourceTree = "<group>"; };
+		4D09470A15B0AE2E002520A6 /* MutLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutLockArray.m; sourceTree = "<group>"; };
+		4D09470B15B0AE2E002520A6 /* MutLockDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutLockDict.m; sourceTree = "<group>"; };
+		4D09470C15B0AE2E002520A6 /* MutNRLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutNRLockArray.m; sourceTree = "<group>"; };
+		4D09470D15B0AE2E002520A6 /* MutNRLockDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutNRLockDict.m; sourceTree = "<group>"; };
+		4D09470E15B0AE2E002520A6 /* NamedMutLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NamedMutLockArray.m; sourceTree = "<group>"; };
+		4D09470F15B0AE2E002520A6 /* ObjectHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectHolder.m; sourceTree = "<group>"; };
+		4D09471015B0AE2E002520A6 /* OSCAddressSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCAddressSpace.m; sourceTree = "<group>"; };
+		4D09471115B0AE2E002520A6 /* OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCBundle.m; sourceTree = "<group>"; };
+		4D09471215B0AE2E002520A6 /* OSCInPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCInPort.m; sourceTree = "<group>"; };
+		4D09471315B0AE2E002520A6 /* OSCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCManager.m; sourceTree = "<group>"; };
+		4D09471415B0AE2E002520A6 /* OSCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCMessage.m; sourceTree = "<group>"; };
+		4D09471515B0AE2E002520A6 /* OSCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCNode.m; sourceTree = "<group>"; };
+		4D09471615B0AE2E002520A6 /* OSCOutPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCOutPort.m; sourceTree = "<group>"; };
+		4D09471715B0AE2E002520A6 /* OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCPacket.m; sourceTree = "<group>"; };
+		4D09471815B0AE2E002520A6 /* OSCStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCStringAdditions.m; sourceTree = "<group>"; };
+		4D09471915B0AE2E002520A6 /* OSCValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCValue.m; sourceTree = "<group>"; };
+		4D09471A15B0AE2E002520A6 /* OSCZeroConfDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCZeroConfDomain.m; sourceTree = "<group>"; };
+		4D09471B15B0AE2E002520A6 /* OSCZeroConfManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCZeroConfManager.m; sourceTree = "<group>"; };
+		4D09471C15B0AE2E002520A6 /* VVAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVAssertionHandler.m; sourceTree = "<group>"; };
+		4D09471D15B0AE2E002520A6 /* VVStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVStopwatch.m; sourceTree = "<group>"; };
+		4D09471E15B0AE2E002520A6 /* VVThreadLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVThreadLoop.m; sourceTree = "<group>"; };
+		4D56702015B0AC8400A70306 /* libVVOSC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVVOSC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D56702315B0AC8400A70306 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D56701D15B0AC8400A70306 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D56702415B0AC8400A70306 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D0946EF15B0AE2E002520A6 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				4D0946F015B0AE2E002520A6 /* MutLockArray.h */,
+				4D0946F115B0AE2E002520A6 /* MutLockDict.h */,
+				4D0946F215B0AE2E002520A6 /* MutNRLockArray.h */,
+				4D0946F315B0AE2E002520A6 /* MutNRLockDict.h */,
+				4D0946F415B0AE2E002520A6 /* NamedMutLockArray.h */,
+				4D0946F515B0AE2E002520A6 /* ObjectHolder.h */,
+				4D0946F615B0AE2E002520A6 /* OSCAddressSpace.h */,
+				4D0946F715B0AE2E002520A6 /* OSCBundle.h */,
+				4D0946F815B0AE2E002520A6 /* OSCConstants.h */,
+				4D0946F915B0AE2E002520A6 /* OSCInPort.h */,
+				4D0946FA15B0AE2E002520A6 /* OSCManager.h */,
+				4D0946FB15B0AE2E002520A6 /* OSCMessage.h */,
+				4D0946FC15B0AE2E002520A6 /* OSCNode.h */,
+				4D0946FD15B0AE2E002520A6 /* OSCOutPort.h */,
+				4D0946FE15B0AE2E002520A6 /* OSCPacket.h */,
+				4D0946FF15B0AE2E002520A6 /* OSCStringAdditions.h */,
+				4D09470015B0AE2E002520A6 /* OSCValue.h */,
+				4D09470115B0AE2E002520A6 /* OSCZeroConfDomain.h */,
+				4D09470215B0AE2E002520A6 /* OSCZeroConfManager.h */,
+				4D09470315B0AE2E002520A6 /* VVAssertionHandler.h */,
+				4D09470415B0AE2E002520A6 /* VVBasicMacros.h */,
+				4D09470515B0AE2E002520A6 /* VVBasics.h */,
+				4D09470615B0AE2E002520A6 /* VVOSC.h */,
+				4D09470715B0AE2E002520A6 /* VVStopwatch.h */,
+				4D09470815B0AE2E002520A6 /* VVThreadLoop.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		4D09470915B0AE2E002520A6 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4D09470A15B0AE2E002520A6 /* MutLockArray.m */,
+				4D09470B15B0AE2E002520A6 /* MutLockDict.m */,
+				4D09470C15B0AE2E002520A6 /* MutNRLockArray.m */,
+				4D09470D15B0AE2E002520A6 /* MutNRLockDict.m */,
+				4D09470E15B0AE2E002520A6 /* NamedMutLockArray.m */,
+				4D09470F15B0AE2E002520A6 /* ObjectHolder.m */,
+				4D09471015B0AE2E002520A6 /* OSCAddressSpace.m */,
+				4D09471115B0AE2E002520A6 /* OSCBundle.m */,
+				4D09471215B0AE2E002520A6 /* OSCInPort.m */,
+				4D09471315B0AE2E002520A6 /* OSCManager.m */,
+				4D09471415B0AE2E002520A6 /* OSCMessage.m */,
+				4D09471515B0AE2E002520A6 /* OSCNode.m */,
+				4D09471615B0AE2E002520A6 /* OSCOutPort.m */,
+				4D09471715B0AE2E002520A6 /* OSCPacket.m */,
+				4D09471815B0AE2E002520A6 /* OSCStringAdditions.m */,
+				4D09471915B0AE2E002520A6 /* OSCValue.m */,
+				4D09471A15B0AE2E002520A6 /* OSCZeroConfDomain.m */,
+				4D09471B15B0AE2E002520A6 /* OSCZeroConfManager.m */,
+				4D09471C15B0AE2E002520A6 /* VVAssertionHandler.m */,
+				4D09471D15B0AE2E002520A6 /* VVStopwatch.m */,
+				4D09471E15B0AE2E002520A6 /* VVThreadLoop.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		4D56701515B0AC8400A70306 = {
+			isa = PBXGroup;
+			children = (
+				4D56702515B0AC8400A70306 /* VVOSC */,
+				4D56702215B0AC8400A70306 /* Frameworks */,
+				4D56702115B0AC8400A70306 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D56702115B0AC8400A70306 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D56702015B0AC8400A70306 /* libVVOSC.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D56702215B0AC8400A70306 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D56702315B0AC8400A70306 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D56702515B0AC8400A70306 /* VVOSC */ = {
+			isa = PBXGroup;
+			children = (
+				4D0946EF15B0AE2E002520A6 /* include */,
+				4D09470915B0AE2E002520A6 /* src */,
+			);
+			path = VVOSC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4D56701E15B0AC8400A70306 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D09471F15B0AE2E002520A6 /* MutLockArray.h in Headers */,
+				4D09472015B0AE2E002520A6 /* MutLockDict.h in Headers */,
+				4D09472115B0AE2E002520A6 /* MutNRLockArray.h in Headers */,
+				4D09472215B0AE2E002520A6 /* MutNRLockDict.h in Headers */,
+				4D09472315B0AE2E002520A6 /* NamedMutLockArray.h in Headers */,
+				4D09472415B0AE2E002520A6 /* ObjectHolder.h in Headers */,
+				4D09472515B0AE2E002520A6 /* OSCAddressSpace.h in Headers */,
+				4D09472615B0AE2E002520A6 /* OSCBundle.h in Headers */,
+				4D09472715B0AE2E002520A6 /* OSCConstants.h in Headers */,
+				4D09472815B0AE2E002520A6 /* OSCInPort.h in Headers */,
+				4D09472915B0AE2E002520A6 /* OSCManager.h in Headers */,
+				4D09472A15B0AE2E002520A6 /* OSCMessage.h in Headers */,
+				4D09472B15B0AE2E002520A6 /* OSCNode.h in Headers */,
+				4D09472C15B0AE2E002520A6 /* OSCOutPort.h in Headers */,
+				4D09472D15B0AE2E002520A6 /* OSCPacket.h in Headers */,
+				4D09472E15B0AE2E002520A6 /* OSCStringAdditions.h in Headers */,
+				4D09472F15B0AE2E002520A6 /* OSCValue.h in Headers */,
+				4D09473015B0AE2E002520A6 /* OSCZeroConfDomain.h in Headers */,
+				4D09473115B0AE2E002520A6 /* OSCZeroConfManager.h in Headers */,
+				4D09473215B0AE2E002520A6 /* VVAssertionHandler.h in Headers */,
+				4D09473315B0AE2E002520A6 /* VVBasicMacros.h in Headers */,
+				4D09473415B0AE2E002520A6 /* VVBasics.h in Headers */,
+				4D09473515B0AE2E002520A6 /* VVOSC.h in Headers */,
+				4D09473615B0AE2E002520A6 /* VVStopwatch.h in Headers */,
+				4D09473715B0AE2E002520A6 /* VVThreadLoop.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4D56701F15B0AC8400A70306 /* VVOSC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D56702D15B0AC8400A70306 /* Build configuration list for PBXNativeTarget "VVOSC" */;
+			buildPhases = (
+				4D56701C15B0AC8400A70306 /* Sources */,
+				4D56701D15B0AC8400A70306 /* Frameworks */,
+				4D56701E15B0AC8400A70306 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VVOSC;
+			productName = VVOSC;
+			productReference = 4D56702015B0AC8400A70306 /* libVVOSC.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D56701715B0AC8400A70306 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 4D56701A15B0AC8400A70306 /* Build configuration list for PBXProject "VVOSC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4D56701515B0AC8400A70306;
+			productRefGroup = 4D56702115B0AC8400A70306 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D56701F15B0AC8400A70306 /* VVOSC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D56701C15B0AC8400A70306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D09473815B0AE2E002520A6 /* MutLockArray.m in Sources */,
+				4D09473915B0AE2E002520A6 /* MutLockDict.m in Sources */,
+				4D09473A15B0AE2E002520A6 /* MutNRLockArray.m in Sources */,
+				4D09473B15B0AE2E002520A6 /* MutNRLockDict.m in Sources */,
+				4D09473C15B0AE2E002520A6 /* NamedMutLockArray.m in Sources */,
+				4D09473D15B0AE2E002520A6 /* ObjectHolder.m in Sources */,
+				4D09473E15B0AE2E002520A6 /* OSCAddressSpace.m in Sources */,
+				4D09473F15B0AE2E002520A6 /* OSCBundle.m in Sources */,
+				4D09474015B0AE2E002520A6 /* OSCInPort.m in Sources */,
+				4D09474115B0AE2E002520A6 /* OSCManager.m in Sources */,
+				4D09474215B0AE2E002520A6 /* OSCMessage.m in Sources */,
+				4D09474315B0AE2E002520A6 /* OSCNode.m in Sources */,
+				4D09474415B0AE2E002520A6 /* OSCOutPort.m in Sources */,
+				4D09474515B0AE2E002520A6 /* OSCPacket.m in Sources */,
+				4D09474615B0AE2E002520A6 /* OSCStringAdditions.m in Sources */,
+				4D09474715B0AE2E002520A6 /* OSCValue.m in Sources */,
+				4D09474815B0AE2E002520A6 /* OSCZeroConfDomain.m in Sources */,
+				4D09474915B0AE2E002520A6 /* OSCZeroConfManager.m in Sources */,
+				4D09474A15B0AE2E002520A6 /* VVAssertionHandler.m in Sources */,
+				4D09474B15B0AE2E002520A6 /* VVStopwatch.m in Sources */,
+				4D09474C15B0AE2E002520A6 /* VVThreadLoop.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4D56702B15B0AC8400A70306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4D56702C15B0AC8400A70306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D56702E15B0AC8400A70306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/VVOSC.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4D56702F15B0AC8400A70306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/VVOSC.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D56701A15B0AC8400A70306 /* Build configuration list for PBXProject "VVOSC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D56702B15B0AC8400A70306 /* Debug */,
+				4D56702C15B0AC8400A70306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D56702D15B0AC8400A70306 /* Build configuration list for PBXNativeTarget "VVOSC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D56702E15B0AC8400A70306 /* Debug */,
+				4D56702F15B0AC8400A70306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D56701715B0AC8400A70306 /* Project object */;
+}
