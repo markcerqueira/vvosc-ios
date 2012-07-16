@@ -27,6 +27,7 @@ This project borrows from the vvopensource projected hosted here[https://code.go
 
 == RESOURCES
 Original code by the creators of VVOSC is hosted here[https://code.google.com/p/vvopensource/]
+
 Documentation on VVOSC, including great coverage of data structures, can be found here[http://vidvox.com/rays_oddsnends/vvosc_doc/index.html]
 
 == ISSUES
