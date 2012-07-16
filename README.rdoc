@@ -25,6 +25,10 @@ This project borrows from the vvopensource projected hosted here[https://code.go
 1. Drag the contents of VVOSC/include and VVOSC/src into your project
 2. Use VVOSC!
 
+== RESOURCES
+Original code by the creators of VVOSC is hosted here[https://code.google.com/p/vvopensource/]
+Documentation on VVOSC, including great coverage of data structures, can be found here[http://vidvox.com/rays_oddsnends/vvosc_doc/index.html]
+
 == ISSUES
 If anyone finds issues with the instructions, please feel free to open an issue and I'll take a look as soon as I can.
 
