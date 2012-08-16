@@ -23,7 +23,8 @@ This project borrows from the vvopensource projected hosted here[https://code.go
 
 === You want to use the source directly in your project
 1. Drag the contents of VVOSC/include and VVOSC/src into your project
-2. Use VVOSC!
+2. If your project is ARC-enabled, you will need to add the compiler flag, -fno-objc-arc, to disable automatic reference counting for all files in VVOSC/VVBasics
+3. Use VVOSC!
 
 == RESOURCES
 Original code by the creators of VVOSC is hosted here[https://code.google.com/p/vvopensource/]
