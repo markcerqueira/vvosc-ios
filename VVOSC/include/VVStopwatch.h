@@ -3,14 +3,14 @@
 
 #include <sys/time.h>
 #import <libkern/OSAtomic.h>
-
+#include <os/lock.h>
 
 
 ///	This class is used to measure how long it takes to do things; much easier to work with than NSDate.
 
 @interface VVStopwatch : NSObject {
 	struct timeval		startTime;
-	OSSpinLock			timeLock;
+    os_unfair_lock		timeLock;
 }
 
 ///	Returns an auto-released instance of VVStopwatch; the stopwatch is started on creation.

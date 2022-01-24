@@ -5,7 +5,7 @@
 #import "MutNRLockArray.h"
 #import "VVBasicMacros.h"
 #import <libkern/OSAtomic.h>
-
+#include <os/lock.h>
 
 
 
@@ -42,7 +42,7 @@ Generally speaking, it's a good idea for each instance of OSCNode to have a disc
 	id					addressSpace;	//	the class OSCAddressSpace is a subclass of OSCNode, and is essentially the "root" node.  all OSCNodes have a pointer to the root node!
 	BOOL				deleted;
 	
-	OSSpinLock			nameLock;
+    os_unfair_lock		nameLock;
 	NSString			*nodeName;	///	"local" name: name of the node at /a/b/c is "c"
 	NSString			*fullName;	///	"full" name: name of the node at /a/b/c is "/a/b/c"
 	MutLockArray		*nodeContents;	///	Contains OSCNode instances- this OSCNode's sub-nodes.  type 'MutLockArray'- this should all be threadsafe...
@@ -51,7 +51,7 @@ Generally speaking, it's a good idea for each instance of OSCNode to have a disc
 	BOOL				hiddenInMenu;	//	NO by default. if YES, this node (and all its sub-nodes) will be omitted from menus!
 	
 	OSCMessage			*lastReceivedMessage;	///	The last message sent to this node is retained (the message is retained instead of the value because messages can have multiple values)
-	OSSpinLock			lastReceivedMessageLock;
+    os_unfair_lock		lastReceivedMessageLock;
 	MutNRLockArray		*delegateArray;	//	type 'MutNRLockArray'. contents are NOT retained! could be anything!
 	
 	BOOL				autoQueryReply;	//	NO by default. if YES and the queryDelegate is nil or doesn't respond to one of the delegate methods or returns nil from one of the delegate methods, the OSCNode will try to automatically respond to the query

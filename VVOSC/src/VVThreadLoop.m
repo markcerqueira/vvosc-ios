@@ -38,7 +38,7 @@
 	paused = NO;
 	executingCallback = NO;
 	
-	valLock = OS_SPINLOCK_INIT;
+	valLock = OS_UNFAIR_LOCK_INIT;
 	
 	targetObj = nil;
 	targetSel = nil;
@@ -52,13 +52,13 @@
 }
 - (void) start	{
 	//NSLog(@"%s",__func__);
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	if (running)	{
-		OSSpinLockUnlock(&valLock);
+		os_unfair_lock_unlock(&valLock);
 		return;
 	}
 	paused = NO;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 	
 	[NSThread
 		detachNewThreadSelector:@selector(threadCallback)
@@ -73,10 +73,10 @@
 	
 	BOOL					tmpRunning = YES;
 	BOOL					tmpBail = NO;
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	running = YES;
 	bail = NO;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 	
 	if (![NSThread setThreadPriority:1.0])
 		NSLog(@"\terror setting thread priority to 1.0");
@@ -91,10 +91,10 @@
 			double				sleepDuration;	//	in microseconds!
 			
 			gettimeofday(&startTime,NULL);
-			OSSpinLockLock(&valLock);
+			os_unfair_lock_lock(&valLock);
 			if (!paused)	{
 				executingCallback = YES;
-				OSSpinLockUnlock(&valLock);
+				os_unfair_lock_unlock(&valLock);
 				//@try	{
 					//	if there's a target object, ping it (delegate-style)
 					if (targetObj != nil)
@@ -107,12 +107,12 @@
 				//	NSLog(@"%s caught exception, %@",__func__,err);
 				//}
 				
-				OSSpinLockLock(&valLock);
+				os_unfair_lock_lock(&valLock);
 				executingCallback = NO;
-				OSSpinLockUnlock(&valLock);
+				os_unfair_lock_unlock(&valLock);
 			}
 			else
-				OSSpinLockUnlock(&valLock);
+				os_unfair_lock_unlock(&valLock);
 			
 			//++runLoopCount;
 			//if (runLoopCount > 4)	{
@@ -140,10 +140,10 @@
 				[NSThread sleepForTimeInterval:sleepDuration];
 			}
 			
-			OSSpinLockLock(&valLock);
+			os_unfair_lock_lock(&valLock);
 			tmpRunning = running;
 			tmpBail = bail;
-			OSSpinLockUnlock(&valLock);
+			os_unfair_lock_unlock(&valLock);
 			//NSLog(@"\t\tproc looping");
 		}
 	}
@@ -168,50 +168,50 @@
 	}
 	
 	[pool release];
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	running = NO;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 	//NSLog(@"\t\t%s - FINSHED",__func__);
 }
 - (void) threadProc	{
 	
 }
 - (void) pause	{
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	paused = YES;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 }
 - (void) resume	{
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	paused = NO;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 }
 - (void) stop	{
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	if (!running)	{
-		OSSpinLockUnlock(&valLock);
+		os_unfair_lock_unlock(&valLock);
 		return;
 	}
 	bail = YES;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 }
 - (void) stopAndWaitUntilDone	{
 	//NSLog(@"%s",__func__);
 	[self stop];
 	BOOL			tmpRunning = NO;
 	
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	tmpRunning = running;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 	
 	while (tmpRunning)	{
 		//NSLog(@"\twaiting");
 		//pthread_yield_np();
 		usleep(100);
 		
-		OSSpinLockLock(&valLock);
+		os_unfair_lock_lock(&valLock);
 		tmpRunning = running;
-		OSSpinLockUnlock(&valLock);
+		os_unfair_lock_unlock(&valLock);
 	}
 	
 }
@@ -223,9 +223,9 @@
 }
 - (BOOL) running	{
 	BOOL		returnMe = NO;
-	OSSpinLockLock(&valLock);
+	os_unfair_lock_lock(&valLock);
 	returnMe = running;
-	OSSpinLockUnlock(&valLock);
+	os_unfair_lock_unlock(&valLock);
 	return returnMe;
 }
 

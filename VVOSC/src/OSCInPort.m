@@ -30,11 +30,11 @@
 	if (self = [super init])	{
 		deleted = NO;
 		bound = NO;
-		socketLock = OS_SPINLOCK_INIT;
+		socketLock = OS_UNFAIR_LOCK_INIT;
 		sock = -1;
 		port = p;
 		
-		scratchLock = OS_SPINLOCK_INIT;
+		scratchLock = OS_UNFAIR_LOCK_INIT;
 		/*
 		threadLooper = [[VVThreadLoop alloc]
 			initWithTimeInterval:1.0/30.0
@@ -93,10 +93,10 @@
 	if (thread!=nil && ![thread isCancelled])
 		[self stop];
 	
-	OSSpinLockLock(&socketLock);
+	os_unfair_lock_lock(&socketLock);
 	close(sock);
 	sock = -1;
-	OSSpinLockUnlock(&socketLock);
+	os_unfair_lock_unlock(&socketLock);
 	
 	deleted = YES;
 }
@@ -111,11 +111,11 @@
 
 - (BOOL) createSocket	{
 	//NSLog(@"%s",__func__);
-	OSSpinLockLock(&socketLock);
+	os_unfair_lock_lock(&socketLock);
 	//	create a UDP socket
 	sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 	if (sock < 0)	{
-		OSSpinLockUnlock(&socketLock);
+		os_unfair_lock_unlock(&socketLock);
 		return NO;
 	}
 	//	set the socket to non-blocking
@@ -138,7 +138,7 @@
 	//	bind the socket
 	if (bind(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0)	{
 		NSLog(@"\t\terr: couldn't bind socket for OSC");
-		OSSpinLockUnlock(&socketLock);
+		os_unfair_lock_unlock(&socketLock);
 		return NO;
 	}
 	
@@ -147,7 +147,7 @@
 		NSLog(@"\t\terr %d at setsockopt() in %s",errno,__func__);
 	}
 	
-	OSSpinLockUnlock(&socketLock);
+	os_unfair_lock_unlock(&socketLock);
 	return YES;
 }
 - (void) start	{
@@ -230,11 +230,11 @@
 			timeout.tv_sec = 0;
 			timeout.tv_usec = 1000;		//	0.01 secs = 100hz
 			
-			OSSpinLockLock(&socketLock);
+			os_unfair_lock_lock(&socketLock);
 			//	figure out if there are any open file descriptors
 			readyFileCount = select(sock+1, &readFileDescriptor, (fd_set *)NULL, (fd_set *)NULL, &timeout);
 			if (readyFileCount < 1)	{	//	if there was an error, bail immediately
-				OSSpinLockUnlock(&socketLock);
+				os_unfair_lock_unlock(&socketLock);
 				if (readyFileCount < 0)	{
 					NSLog(@"\t\terr: socket got closed unexpectedly");
 					[self stop];
@@ -277,15 +277,15 @@
 				
 				readyFileCount = select(sock+1, &readFileDescriptor, (fd_set *)NULL, (fd_set *)NULL, &timeout);
 			}
-			OSSpinLockUnlock(&socketLock);
+			os_unfair_lock_unlock(&socketLock);
 			//	if there's stuff in the scratch dict, i have to pass the info on to my delegate
 			if ([scratchArray count] > 0)	{
 				NSArray				*tmpArray = nil;
 				
-				OSSpinLockLock(&scratchLock);
+				os_unfair_lock_lock(&scratchLock);
 					tmpArray = [NSArray arrayWithArray:scratchArray];
 					[scratchArray removeAllObjects];
-				OSSpinLockUnlock(&scratchLock);
+				os_unfair_lock_unlock(&scratchLock);
 				
 				[self handleScratchArray:tmpArray];
 			}
@@ -337,11 +337,11 @@
 	timeout.tv_sec = 0;
 	timeout.tv_usec = 10000;		//	0.01 secs = 100hz
 	
-	OSSpinLockLock(&socketLock);
+	os_unfair_lock_lock(&socketLock);
 	//	figure out if there are any open file descriptors
 	readyFileCount = select(sock+1, &readFileDescriptor, (fd_set *)NULL, (fd_set *)NULL, &timeout);
 	if (readyFileCount < 1)	{	//	if there was an error, bail immediately
-		OSSpinLockUnlock(&socketLock);
+		os_unfair_lock_unlock(&socketLock);
 		if (readyFileCount < 0)	{
 			NSLog(@"\t\terr: socket got closed unexpectedly");
 			[self stop];
@@ -353,7 +353,7 @@
 		//NSLog(@"\t\twhile/packet ping");
 		//	if i'm no longer supposed to be running, kill the thread
 		if (![threadLooper running])	{
-			OSSpinLockUnlock(&socketLock);
+			os_unfair_lock_unlock(&socketLock);
 			return;
 		}
 		
@@ -390,15 +390,15 @@
 		
 		readyFileCount = select(sock+1, &readFileDescriptor, (fd_set *)NULL, (fd_set *)NULL, &timeout);
 	}
-	OSSpinLockUnlock(&socketLock);
+	os_unfair_lock_unlock(&socketLock);
 	//	if there's stuff in the scratch dict, i have to pass the info on to my delegate
 	if ([scratchArray count] > 0)	{
 		NSArray				*tmpArray = nil;
 		
-		OSSpinLockLock(&scratchLock);
+		os_unfair_lock_lock(&scratchLock);
 			tmpArray = [NSArray arrayWithArray:scratchArray];
 			[scratchArray removeAllObjects];
-		OSSpinLockUnlock(&scratchLock);
+		os_unfair_lock_unlock(&scratchLock);
 		
 		[self handleScratchArray:tmpArray];
 	}
@@ -438,10 +438,10 @@
 	if (val == nil)
 		return;
 	
-	OSSpinLockLock(&scratchLock);
+	os_unfair_lock_lock(&scratchLock);
 		//	add the osc path msg to the scratch array
 		[scratchArray addObject:val];
-	OSSpinLockUnlock(&scratchLock);
+	os_unfair_lock_unlock(&scratchLock);
 }
 
 - (void) _dispatchQuery:(OSCMessage *)m toOutPort:(OSCOutPort *)o	{
@@ -464,9 +464,9 @@
 	}
 	struct sockaddr_in	*outAddr = [o addr];
 	
-	OSSpinLockLock(&socketLock);
+	os_unfair_lock_lock(&socketLock);
 	numBytesSent = (int)sendto(sock,buff,bufferSize,0,(const struct sockaddr *)outAddr,sizeof(*outAddr));
-	OSSpinLockUnlock(&socketLock);
+	os_unfair_lock_unlock(&socketLock);
 	//[self start];
 	[pack release];
 }
@@ -483,16 +483,16 @@
 	//	stop & close my socket
 	[self stop];
 	
-	OSSpinLockLock(&socketLock);
+	os_unfair_lock_lock(&socketLock);
 	close(sock);
 	sock = -1;
-	OSSpinLockUnlock(&socketLock);
+	os_unfair_lock_unlock(&socketLock);
 	
 	//	clear out the scratch dict/array
-	OSSpinLockLock(&scratchLock);
+	os_unfair_lock_lock(&scratchLock);
 		if (scratchArray != nil)
 			[scratchArray removeAllObjects];
-	OSSpinLockUnlock(&scratchLock);
+	os_unfair_lock_unlock(&scratchLock);
 	//	set up with the new port
 	bound = NO;
 	port = n;
@@ -502,15 +502,15 @@
 		[self start];
 	else	{
 		//	close the socket
-		OSSpinLockLock(&socketLock);
+		os_unfair_lock_lock(&socketLock);
 		close(sock);
 		sock = -1;
-		OSSpinLockUnlock(&socketLock);
+		os_unfair_lock_unlock(&socketLock);
 		//	clear out the scratch dict
-		OSSpinLockLock(&scratchLock);
+		os_unfair_lock_lock(&scratchLock);
 			if (scratchArray != nil)
 				[scratchArray removeAllObjects];
-		OSSpinLockUnlock(&scratchLock);
+		os_unfair_lock_unlock(&scratchLock);
 		//	set up with the old port
 		bound = NO;
 		port = oldPort;
