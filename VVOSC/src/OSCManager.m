@@ -625,7 +625,7 @@
 
 
 /*!
-	by default, this method returns [OSCInPort class].  it’s called when creating an input port. this method exists so if you subclass OSCInPort you can override this method to have your manager create your custom subclass with the default port creation methods
+	by default, this method returns [OSCInPort class].  itís called when creating an input port. this method exists so if you subclass OSCInPort you can override this method to have your manager create your custom subclass with the default port creation methods
 */
 - (id) inPortClass	{
 	return inPortClass;
@@ -645,7 +645,7 @@
 	inPortLabelBase = [n retain];
 }
 /*!
-	by default, this method returns [OSCOutPort class].  it’s called when creating an input port. this method exists so if you subclass OSCOutPort you can override this method to have your manager create your custom subclass with the default port creation methods
+	by default, this method returns [OSCOutPort class].  itís called when creating an input port. this method exists so if you subclass OSCOutPort you can override this method to have your manager create your custom subclass with the default port creation methods
 */
 - (id) outPortClass	{
 	return outPortClass;
